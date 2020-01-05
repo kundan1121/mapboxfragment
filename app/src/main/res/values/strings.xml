@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">mapbox fragment</string>
+    <string name="navigation_guidance_day" translatable="false">mapbox://styles/mapbox/navigation-guidance-day-v4</string>
+    <string name="access_token" translatable="false">sk.eyJ1Ijoia3VuZGFuMTEyMSIsImEiOiJjazMxb3g3amIwOGJrM21xZnp1ZXA5dGRxIn0.EkCOi-2P6ojg7AAhWxtWsA</string>
+
+    <string name="user_location_permission_not_granted">access denied</string>
+    <string name="user_location_permission_explanation">permission grant</string>
+</resources>
