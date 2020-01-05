@@ -28,5 +28,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation 'com.mapbox.mapboxsdk:mapbox-android-sdk:8.5.0'
     implementation 'com.mapbox.mapboxsdk:mapbox-android-navigation-ui:0.42.3'
+    implementation 'android.arch.persistence.room:runtime:1.1.1'
+    annotationProcessor 'android.arch.persistence.room:compiler:1.1.1'
 
 }

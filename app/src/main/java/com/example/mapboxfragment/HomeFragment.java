@@ -66,7 +66,7 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Permis
     private static final String TAG = "DirectionsActivity";
     NavigationMapRoute navigationMapRoute;
     private Button button, btnstart, btnpause, btnresume, btnreset;
-    EditText locationTxt;
+    EditText locationTxt,id,name,email;
     Handler handler;
     long MillisecondTime, StartTime, TimeBuff, UpdateTime = 0L ;
     int Seconds, Minutes, MilliSeconds ;
@@ -95,6 +95,10 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Permis
         timer = view.findViewById(R.id.time);
         handler = new Handler();
         locationTxt = view.findViewById(R.id.loca);
+        //databse 3 entity
+        id = view.findViewById(R.id.id);
+        email = view.findViewById(R.id.email);
+        name = view.findViewById(R.id.name);
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(this);
         btnstart.setOnClickListener(new View.OnClickListener() {
@@ -104,6 +108,19 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Permis
                 handler.postDelayed(runnable, 0);
                 btnstart.setVisibility(View.INVISIBLE);
                 btnpause.setVisibility(View.VISIBLE);
+                //databse part
+                int userid = Integer.parseInt(id.getText().toString());
+                String username = name.getText().toString();
+                String useremail = email.getText().toString();
+
+                User user = new User();
+                user.setId(userid);
+                user.setName(username);
+                user.setEmail(useremail);
+
+                MainActivity.myAppDatabase.myDao().addUser(user);
+                Toast.makeText(getActivity(),"user added succesfully",Toast.LENGTH_SHORT).show();
+
 
             }
         });
@@ -248,7 +265,7 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Permis
         return true;
     }
 
-    private void getRoute(Point originPoint, Point destinationPoint) {
+    private void getRoute(Point originPoint, Point destinationPoint){
 
         NavigationRoute.builder(requireActivity())
                 .accessToken(Mapbox.getAccessToken())

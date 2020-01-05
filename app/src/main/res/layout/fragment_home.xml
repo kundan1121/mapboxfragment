@@ -22,6 +22,33 @@
 
         />
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/id"
+        android:hint="id"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/name"
+        android:hint="name"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_below="@+id/id"
+        />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/email"
+        android:hint="email"
+        android:layout_below="@+id/name"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        />
+
     <TextView
         android:id="@+id/time"
         android:text="00:00:00"
